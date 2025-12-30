@@ -19,10 +19,13 @@ const Login = () => {
 
   useEffect(() => {
     if (token) {
+      const clickSound=new Audio("/login-sound.mp3")
+      clickSound.volume=0.4;
+      clickSound.play().catch(err => console.log("Sound play blocked:", err));
       const timer = setTimeout(() => {
         navigate("/")
       }, 3000)
-      return () => clearTimeout
+      return () => clearTimeout(timer)
     };
   }, [token, navigate]);
 
