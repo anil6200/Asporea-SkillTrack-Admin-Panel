@@ -1,0 +1,27 @@
+[{
+  "_id": {
+    "$oid": "69498ea80e0690e71e4ada90"
+  },
+  "courseName": "Tally Accounting",
+  "courseDuration": 90,
+  "batchSize": 28,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69498f150e0690e71e4ada92"
+  },
+  "courseName": "Customer Sales Representative",
+  "courseDuration": 95,
+  "batchSize": 30,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69498f4fe628e3abff542a83"
+  },
+  "courseName": "Retail Management",
+  "courseDuration": 85,
+  "batchSize": 30,
+  "__v": 0
+}]

@@ -1,0 +1,190 @@
+[{
+  "_id": {
+    "$oid": "694a26745abef2bad100cca6"
+  },
+  "candidateId": {
+    "$oid": "69499084e628e3abff542a85"
+  },
+  "technicalScore": 95,
+  "softSkillScore": 99,
+  "mockInterviewResult": "Pass",
+  "remarks": "Better performance",
+  "createdAt": {
+    "$date": "2025-12-23T05:19:48.943Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T19:19:12.028Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "694b97d36b33280c9ec8a8c4"
+  },
+  "candidateId": {
+    "$oid": "694b6925771c5af4ba6edee5"
+  },
+  "technicalScore": 87,
+  "softSkillScore": 99,
+  "mockInterviewResult": "Pass",
+  "remarks": "very Good performance",
+  "createdAt": {
+    "$date": "2025-12-24T07:35:47.708Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-26T14:19:07.186Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "694ba5f03cc04b8524f988cf"
+  },
+  "candidateId": {
+    "$oid": "694ba5d73cc04b8524f988c7"
+  },
+  "technicalScore": 100,
+  "softSkillScore": 92,
+  "mockInterviewResult": "Pass",
+  "remarks": "Good Performance",
+  "createdAt": {
+    "$date": "2025-12-24T08:36:00.877Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-26T08:35:04.054Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "694c0bf83cc04b8524f98a57"
+  },
+  "candidateId": {
+    "$oid": "694c0bdd3cc04b8524f98a50"
+  },
+  "technicalScore": 98,
+  "softSkillScore": 95,
+  "mockInterviewResult": "Pass",
+  "remarks": "Excellent Performance",
+  "createdAt": {
+    "$date": "2025-12-24T15:51:20.784Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-24T15:51:20.784Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "694e3f780f3588a7a1544fc2"
+  },
+  "candidateId": {
+    "$oid": "694e3f630f3588a7a1544fab"
+  },
+  "technicalScore": 95,
+  "softSkillScore": 94,
+  "mockInterviewResult": "Pass",
+  "remarks": "Excellent",
+  "createdAt": {
+    "$date": "2025-12-26T07:55:36.470Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-26T08:01:29.149Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "694f90bf0bae33f658c51d02"
+  },
+  "candidateId": {
+    "$oid": "694f8fc70bae33f658c51ce9"
+  },
+  "technicalScore": 89,
+  "softSkillScore": 90,
+  "mockInterviewResult": "Pass",
+  "remarks": "Good Performance",
+  "createdAt": {
+    "$date": "2025-12-27T07:54:39.097Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-27T07:54:39.097Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "695253c12e37a063f3163b60"
+  },
+  "candidateId": {
+    "$oid": "6952532b2e37a063f3163b2c"
+  },
+  "technicalScore": 80,
+  "softSkillScore": 85,
+  "mockInterviewResult": "Pass",
+  "remarks": "Good Performance",
+  "createdAt": {
+    "$date": "2025-12-29T10:11:13.786Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T10:11:13.786Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69534f712964f535ede7e9d5"
+  },
+  "candidateId": {
+    "$oid": "69534e652964f535ede7e9a0"
+  },
+  "technicalScore": 90,
+  "softSkillScore": 95,
+  "mockInterviewResult": "Pass",
+  "remarks": "Excellent Performance",
+  "createdAt": {
+    "$date": "2025-12-30T04:05:05.765Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-30T04:05:05.765Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69534fa42964f535ede7e9e5"
+  },
+  "candidateId": {
+    "$oid": "69534ee42964f535ede7e9ad"
+  },
+  "technicalScore": 75,
+  "softSkillScore": 70,
+  "mockInterviewResult": "Pass",
+  "remarks": "Good Performance",
+  "createdAt": {
+    "$date": "2025-12-30T04:05:56.541Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-30T04:05:56.541Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69534fd82964f535ede7e9f5"
+  },
+  "candidateId": {
+    "$oid": "69534f3a2964f535ede7e9c3"
+  },
+  "technicalScore": 35,
+  "softSkillScore": 30,
+  "mockInterviewResult": "Fail",
+  "remarks": "Bad Performance ",
+  "createdAt": {
+    "$date": "2025-12-30T04:06:48.766Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-30T04:06:48.766Z"
+  },
+  "__v": 0
+}]

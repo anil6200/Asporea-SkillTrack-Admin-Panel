@@ -1,0 +1,200 @@
+[{
+  "_id": {
+    "$oid": "69499084e628e3abff542a85"
+  },
+  "fullName": "Anil Yadav",
+  "mobileNumber": "7404279811",
+  "emailAddress": "anil15@gmail.com",
+  "education": "MCA",
+  "panchayatName": "UP",
+  "courseApplied": "Tally Accounting",
+  "status": "applied",
+  "enrollmentFeePaid": true,
+  "createdAt": {
+    "$date": "2025-12-22T18:40:04.723Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-30T04:51:02.543Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "694b6925771c5af4ba6edee5"
+  },
+  "fullName": "Vikas Tiwari",
+  "mobileNumber": "9499437069",
+  "emailAddress": "tiwari78@gmail.com",
+  "education": "MCA",
+  "panchayatName": "Ballia",
+  "courseApplied": "Customer Sales Representative",
+  "status": "placed",
+  "enrollmentFeePaid": true,
+  "createdAt": {
+    "$date": "2025-12-24T04:16:37.956Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T09:58:21.423Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "694ba5d73cc04b8524f988c7"
+  },
+  "fullName": "Sandeep Yadav",
+  "mobileNumber": "9588305067",
+  "emailAddress": "sandeep34@gmail.com",
+  "education": "MA",
+  "panchayatName": "Ballia",
+  "courseApplied": "Tally Accounting",
+  "status": "placed",
+  "enrollmentFeePaid": true,
+  "createdAt": {
+    "$date": "2025-12-24T08:35:35.460Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-27T15:40:27.039Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "694c0bdd3cc04b8524f98a50"
+  },
+  "fullName": "Amit",
+  "mobileNumber": "8168551937",
+  "emailAddress": "amit2@gmail.com",
+  "education": "MPharma",
+  "panchayatName": "Gopalganj",
+  "courseApplied": "Retail Management",
+  "status": "training",
+  "enrollmentFeePaid": true,
+  "createdAt": {
+    "$date": "2025-12-24T15:50:53.655Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-27T15:55:02.400Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "694e3f630f3588a7a1544fab"
+  },
+  "fullName": "Nitu Kumari",
+  "mobileNumber": "8967456378",
+  "emailAddress": "nitu90@gmail.com",
+  "education": "MA",
+  "panchayatName": "Thawe",
+  "courseApplied": "Tally Accounting",
+  "status": "training",
+  "enrollmentFeePaid": true,
+  "createdAt": {
+    "$date": "2025-12-26T07:55:15.093Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-27T15:24:21.940Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "694f8fc70bae33f658c51ce9"
+  },
+  "fullName": "Sobha Kumari",
+  "mobileNumber": "9377820356",
+  "emailAddress": "sobhayadav@gmail.com",
+  "education": "BA",
+  "panchayatName": "Siwan",
+  "courseApplied": "Customer Sales Representative",
+  "status": "applied",
+  "enrollmentFeePaid": true,
+  "createdAt": {
+    "$date": "2025-12-27T07:50:31.472Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-27T07:50:31.472Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6952532b2e37a063f3163b2c"
+  },
+  "fullName": "Manish Kumar",
+  "mobileNumber": "9308512654",
+  "emailAddress": "manish90@gmail.com",
+  "education": "BA",
+  "panchayatName": "Gopalganj",
+  "courseApplied": "Tally Accounting",
+  "status": "applied",
+  "enrollmentFeePaid": true,
+  "createdAt": {
+    "$date": "2025-12-29T10:08:43.043Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T10:08:43.043Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69534e652964f535ede7e9a0"
+  },
+  "fullName": "Pratick",
+  "mobileNumber": "9453851274",
+  "emailAddress": "pratick90@gmail.com",
+  "education": "MSC",
+  "panchayatName": "Siliguri",
+  "courseApplied": "Tally Accounting",
+  "status": "training",
+  "enrollmentFeePaid": true,
+  "createdAt": {
+    "$date": "2025-12-30T04:00:37.540Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-30T04:00:37.540Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69534ee42964f535ede7e9ad"
+  },
+  "fullName": "Ankit",
+  "mobileNumber": "8574968541",
+  "emailAddress": "bharti@ankit.com",
+  "education": "B.tech",
+  "panchayatName": "Rohtak",
+  "courseApplied": "Retail Management",
+  "status": "placed",
+  "enrollmentFeePaid": true,
+  "createdAt": {
+    "$date": "2025-12-30T04:02:44.661Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-30T04:02:44.661Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69534f3a2964f535ede7e9c3"
+  },
+  "fullName": "Mamta Kumari",
+  "mobileNumber": "9241638574",
+  "emailAddress": "mamta@kumari89.com",
+  "education": "BA",
+  "panchayatName": "Siwan",
+  "courseApplied": "Tally Accounting",
+  "status": "applied",
+  "enrollmentFeePaid": true,
+  "createdAt": {
+    "$date": "2025-12-30T04:04:10.661Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-30T04:04:10.661Z"
+  },
+  "__v": 0
+}]

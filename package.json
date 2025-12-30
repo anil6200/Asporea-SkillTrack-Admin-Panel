@@ -1,0 +1,17 @@
+{
+  "name": "asporea-skilltrack-admin-panel",
+  "version": "1.0.0",
+  "description": "📘 SkillTrack – Asporea Admin Portal      (BGD-SDTC-01)",
+  "main": "index.js",
+   "scripts": {
+  "server": "npm start --prefix Backend",
+  "client": "npm run dev --prefix Frontend",
+  "dev": "concurrently \"npm run server\" \"npm run client\""
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

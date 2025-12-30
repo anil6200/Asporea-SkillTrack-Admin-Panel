@@ -1,0 +1,588 @@
+[{
+  "_id": {
+    "$oid": "694e2e2716b054216cf1e580"
+  },
+  "message": "Candidate Nitu Kumariadded",
+  "type": "candidate",
+  "createdAt": {
+    "$date": "2025-12-26T06:41:43.459Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-26T06:41:43.459Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "694e2e9216b054216cf1e59a"
+  },
+  "message": "Assessment added for candidate",
+  "type": "assessment",
+  "createdAt": {
+    "$date": "2025-12-26T06:43:30.327Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-26T06:43:30.327Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "694e3f420f3588a7a1544f9e"
+  },
+  "message": "Candidate deleted",
+  "type": "candidate",
+  "createdAt": {
+    "$date": "2025-12-26T07:54:42.621Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-26T07:54:42.621Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "694e3f630f3588a7a1544fad"
+  },
+  "message": "Candidate Nitu Kumari added",
+  "type": "candidate",
+  "createdAt": {
+    "$date": "2025-12-26T07:55:15.172Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-26T07:55:15.172Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "694e3f780f3588a7a1544fc5"
+  },
+  "message": "Assessment added for Nitu Kumari ",
+  "type": "assessment",
+  "createdAt": {
+    "$date": "2025-12-26T07:55:36.637Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-26T07:55:36.637Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "694e40d908c2a4403220615d"
+  },
+  "message": "Assessment updated for Nitu Kumari",
+  "type": "assessment",
+  "createdAt": {
+    "$date": "2025-12-26T08:01:29.318Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-26T08:01:29.318Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "694e48b908c2a440322061f0"
+  },
+  "message": "Assessment updated for Sandeep Yadav",
+  "type": "assessment",
+  "createdAt": {
+    "$date": "2025-12-26T08:35:05.056Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-26T08:35:05.056Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "694e4aa67a2ace6377401f8a"
+  },
+  "message": "Candidate Anil Yadav updated",
+  "type": "candidate",
+  "createdAt": {
+    "$date": "2025-12-26T08:43:18.105Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-26T08:43:18.105Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "694e6482415eae40c7927822"
+  },
+  "message": "Candidate Anil Yadav updated",
+  "type": "candidate",
+  "createdAt": {
+    "$date": "2025-12-26T10:33:38.668Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-26T10:33:38.668Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "694e6d216c61ee1958f8eeda"
+  },
+  "message": "Assessment updated for Vikas Tiwari",
+  "type": "assessment",
+  "createdAt": {
+    "$date": "2025-12-26T11:10:25.996Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-26T11:10:25.996Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "694e72a0ced34f2c4fc93f9d"
+  },
+  "message": "Candidate Vikas Tiwari updated",
+  "type": "candidate",
+  "createdAt": {
+    "$date": "2025-12-26T11:33:52.115Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-26T11:33:52.115Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "694e8bdf5a77f7f798e5d2f8"
+  },
+  "message": "Candidate Sandeep Yadav updated",
+  "type": "candidate",
+  "createdAt": {
+    "$date": "2025-12-26T13:21:35.781Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-26T13:21:35.781Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "694e995b5a77f7f798e5d3c2"
+  },
+  "message": "Assessment updated for Vikas Tiwari",
+  "type": "assessment",
+  "createdAt": {
+    "$date": "2025-12-26T14:19:07.317Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-26T14:19:07.317Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "694ea9a6e2f6123571139179"
+  },
+  "message": "Assessment updated for Anil Yadav",
+  "type": "assessment",
+  "createdAt": {
+    "$date": "2025-12-26T15:28:38.068Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-26T15:28:38.068Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "694f8fc70bae33f658c51ceb"
+  },
+  "message": "Candidate Sobha Kumari added",
+  "type": "candidate",
+  "createdAt": {
+    "$date": "2025-12-27T07:50:31.563Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-27T07:50:31.563Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "694f90bf0bae33f658c51d05"
+  },
+  "message": "Assessment added for Sobha Kumari ",
+  "type": "assessment",
+  "createdAt": {
+    "$date": "2025-12-27T07:54:39.293Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-27T07:54:39.293Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "694ff913fbd941522e45ae5e"
+  },
+  "message": "Candidate Amit updated",
+  "type": "candidate",
+  "createdAt": {
+    "$date": "2025-12-27T15:19:47.667Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-27T15:19:47.667Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "694ffa26fbd941522e45ae70"
+  },
+  "message": "Candidate Nitu Kumari updated",
+  "type": "candidate",
+  "createdAt": {
+    "$date": "2025-12-27T15:24:22.093Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-27T15:24:22.093Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "694ffa41fbd941522e45ae7c"
+  },
+  "message": "Candidate Amit updated",
+  "type": "candidate",
+  "createdAt": {
+    "$date": "2025-12-27T15:24:49.835Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-27T15:24:49.835Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "694ffc31fbd941522e45af00"
+  },
+  "message": "Candidate Vikas Tiwari updated",
+  "type": "candidate",
+  "createdAt": {
+    "$date": "2025-12-27T15:33:05.506Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-27T15:33:05.506Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "694ffdebfbd941522e45af2a"
+  },
+  "message": "Candidate Sandeep Yadav updated",
+  "type": "candidate",
+  "createdAt": {
+    "$date": "2025-12-27T15:40:27.135Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-27T15:40:27.135Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69500156fbd941522e45af47"
+  },
+  "message": "Candidate Amit updated",
+  "type": "candidate",
+  "createdAt": {
+    "$date": "2025-12-27T15:55:02.507Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-27T15:55:02.507Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "695250bd2e37a063f3163ace"
+  },
+  "message": "Candidate Vikas Tiwari updated",
+  "type": "candidate",
+  "createdAt": {
+    "$date": "2025-12-29T09:58:21.528Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T09:58:21.528Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "695250e12e37a063f3163aeb"
+  },
+  "message": "Candidate Anil Yadav updated",
+  "type": "candidate",
+  "createdAt": {
+    "$date": "2025-12-29T09:58:57.025Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T09:58:57.025Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6952532b2e37a063f3163b2e"
+  },
+  "message": "Candidate Manish Kumar added",
+  "type": "candidate",
+  "createdAt": {
+    "$date": "2025-12-29T10:08:43.186Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T10:08:43.186Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "695253c22e37a063f3163b63"
+  },
+  "message": "Assessment added for Manish Kumar ",
+  "type": "assessment",
+  "createdAt": {
+    "$date": "2025-12-29T10:11:14.008Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T10:11:14.008Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69528099bbe08aa1c8ab4e69"
+  },
+  "message": "Admin changed password (admin@asporea.com)",
+  "type": "general",
+  "createdAt": {
+    "$date": "2025-12-29T13:22:33.420Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T13:22:33.420Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6952cf9710776aff8c9dde0b"
+  },
+  "message": "Candidate Anil Yadav updated",
+  "type": "candidate",
+  "createdAt": {
+    "$date": "2025-12-29T18:59:35.859Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T18:59:35.859Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6952cfe910776aff8c9dde29"
+  },
+  "message": "Candidate Akash added",
+  "type": "candidate",
+  "createdAt": {
+    "$date": "2025-12-29T19:00:57.630Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T19:00:57.630Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6952cff910776aff8c9dde35"
+  },
+  "message": "Candidate Akash deleted",
+  "type": "candidate",
+  "createdAt": {
+    "$date": "2025-12-29T19:01:13.793Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T19:01:13.793Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6952d08610776aff8c9dde4a"
+  },
+  "message": "Admin changed password (admin@asporea.com)",
+  "type": "general",
+  "createdAt": {
+    "$date": "2025-12-29T19:03:34.960Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T19:03:34.960Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6952d43010776aff8c9ddef5"
+  },
+  "message": "Assessment updated for Anil Yadav",
+  "type": "assessment",
+  "createdAt": {
+    "$date": "2025-12-29T19:19:12.119Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T19:19:12.119Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69534de42964f535ede7e995"
+  },
+  "message": "Admin logged in (admin@asporea.com)",
+  "type": "general",
+  "createdAt": {
+    "$date": "2025-12-30T03:58:28.054Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-30T03:58:28.054Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69534e652964f535ede7e9a2"
+  },
+  "message": "Candidate Pratick added",
+  "type": "candidate",
+  "createdAt": {
+    "$date": "2025-12-30T04:00:37.592Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-30T04:00:37.592Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69534ee42964f535ede7e9af"
+  },
+  "message": "Candidate Ankit added",
+  "type": "candidate",
+  "createdAt": {
+    "$date": "2025-12-30T04:02:44.710Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-30T04:02:44.710Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69534f3a2964f535ede7e9c5"
+  },
+  "message": "Candidate Mamta Kumari added",
+  "type": "candidate",
+  "createdAt": {
+    "$date": "2025-12-30T04:04:10.702Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-30T04:04:10.702Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69534f712964f535ede7e9d8"
+  },
+  "message": "Assessment added for Pratick ",
+  "type": "assessment",
+  "createdAt": {
+    "$date": "2025-12-30T04:05:05.867Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-30T04:05:05.867Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69534fa42964f535ede7e9e8"
+  },
+  "message": "Assessment added for Ankit ",
+  "type": "assessment",
+  "createdAt": {
+    "$date": "2025-12-30T04:05:56.649Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-30T04:05:56.649Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69534fd82964f535ede7e9f8"
+  },
+  "message": "Assessment added for Mamta Kumari ",
+  "type": "assessment",
+  "createdAt": {
+    "$date": "2025-12-30T04:06:48.848Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-30T04:06:48.848Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "695350e32964f535ede7ea36"
+  },
+  "message": "Admin logged in (admin@asporea.com)",
+  "type": "general",
+  "createdAt": {
+    "$date": "2025-12-30T04:11:15.205Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-30T04:11:15.205Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "695359c740d784e815a3b82d"
+  },
+  "message": "Admin logged in (admin@asporea.com)",
+  "type": "general",
+  "createdAt": {
+    "$date": "2025-12-30T04:49:11.135Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-30T04:49:11.135Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69535a3640d784e815a3b85b"
+  },
+  "message": "Candidate Anil Yadav updated",
+  "type": "candidate",
+  "createdAt": {
+    "$date": "2025-12-30T04:51:02.641Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-30T04:51:02.641Z"
+  },
+  "__v": 0
+}]

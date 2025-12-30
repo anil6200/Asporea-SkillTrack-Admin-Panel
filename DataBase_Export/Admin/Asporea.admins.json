@@ -1,0 +1,15 @@
+[{
+  "_id": {
+    "$oid": "69498cb1f87b7b6421497214"
+  },
+  "email": "admin@asporea.com",
+  "password": "$2b$10$AEBcQJmT1ScBQ9bLFkVhb.NlU9Cr7QKlNWZUhpB8UfIu2biEme44O",
+  "role": "admin",
+  "createdAt": {
+    "$date": "2025-12-22T18:23:45.594Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T19:03:34.903Z"
+  },
+  "__v": 0
+}]
