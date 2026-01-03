@@ -14,7 +14,7 @@ export const fetchAssessments = createAsyncThunk(
     try {
       return await assessmentService.getAssessments();
     } catch (err) {
-      return thunkAPI.rejectWithValue(err.response?.data?.message);
+      return thunkAPI.rejectWithValue(err.response?.data?.msg);
     }
   }
 );
@@ -25,7 +25,7 @@ export const createAssessment = createAsyncThunk(
     try {
       return await assessmentService.addAssessment(data);
     } catch (err) {
-      return thunkAPI.rejectWithValue(err.response?.data?.message);
+      return thunkAPI.rejectWithValue(err.response?.data?.msg);
     }
   }
 );
@@ -36,7 +36,7 @@ export const editAssessment = createAsyncThunk(
     try {
       return await assessmentService.updateAssessment({ id, data });
     } catch (err) {
-      return thunkAPI.rejectWithValue(err.response?.data?.message);
+      return thunkAPI.rejectWithValue(err.response?.data?.msg);
     }
   }
 );
@@ -48,7 +48,7 @@ export const removeAssessment = createAsyncThunk(
       await assessmentService.deleteAssessment(id);
       return id;
     } catch (err) {
-      return thunkAPI.rejectWithValue(err.response?.data?.message);
+      return thunkAPI.rejectWithValue(err.response?.data?.msg);
     }
   }
 );

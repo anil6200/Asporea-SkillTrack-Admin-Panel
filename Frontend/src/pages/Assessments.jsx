@@ -8,6 +8,8 @@ import {
   Search, Plus, Edit2, X, Trophy, Star, MessageSquare, GraduationCap, CheckCircle2, AlertCircle
 } from "lucide-react"; // Performance icons
 import SuccessModal from "../components/modals/SuccessModal";
+import ErrorModal from "../components/modals/ErrorModal";
+
 
 const Assessments = () => {
   const dispatch = useDispatch();
@@ -20,6 +22,8 @@ const Assessments = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
 const [successMsg, setSuccessMsg] = useState("");
+const [errorMsg , setErrorMsg] = useState("")
+const [showError,setShowError] = useState(false)
 
   useEffect(() => {
     dispatch(fetchAssessments());
@@ -57,16 +61,29 @@ const [successMsg, setSuccessMsg] = useState("");
         .then(() =>{
         setSuccessMsg("Assessment Update Successfully!"); 
         setShowSuccess(true); 
-        dispatch(fetchAssessments())});
+        dispatch(fetchAssessments())
+        setIsModalOpen(false);
+      })
+        .catch((err)=>{
+          setErrorMsg(err?.message || "Update Failed")
+          setShowError(true)
+        })
+
     } else {
       dispatch(createAssessment(data)).unwrap().then(() => {
         setSuccessMsg("Assessment Created Successfully!")
         setShowSuccess(true)
         dispatch(fetchAssessments());
         dispatch(getDashboardStats());
-      });
+        setIsModalOpen(false);
+      })
+      .catch((err)=>{
+        setErrorMsg(err || "Assessment already exists for this candidate")
+        setShowError(true)
+        setIsModalOpen(false)
+      })
     }
-    setIsModalOpen(false);
+    
   };
 
   // Helper for Score Colors
@@ -263,6 +280,11 @@ const [successMsg, setSuccessMsg] = useState("");
         message={successMsg} 
         onClose={() => setShowSuccess(false)} 
       />
+      <ErrorModal
+      isOpen={showError}
+      message={errorMsg}
+      onClose={() => setShowError(false)}
+    />
     </motion.div>
   );
 };

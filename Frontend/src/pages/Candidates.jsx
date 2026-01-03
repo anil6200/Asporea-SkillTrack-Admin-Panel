@@ -66,7 +66,7 @@ const Candidates = () => {
       dispatch(removeCandidate(candidate._id))
         .unwrap()
         .then(() => {
-          setSuccessMsg("Record Deleted Successfully!");
+          setSuccessMsg(" Candidate Deleted Successfully!");
           setShowSuccess(true)
           dispatch(fetchCandidates());
           dispatch(getDashboardStats())
