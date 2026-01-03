@@ -12,7 +12,7 @@ const Sidebar = () => {
   const [showNavSuccess, setShowNavSuccess] = useState(false);
   const [navMsg, setNavMsg] = useState("");
   const menuItems = [
-    { path: "/", name: "Dashboard", icon: <LayoutDashboard size={20} />, end: true },
+    { path: "/Dashboard", name: "Dashboard", icon: <LayoutDashboard size={20} />, end: true },
     { path: "/candidates", name: "Candidates", icon: <Users size={20} /> },
     { path: "/courses", name: "Courses", icon: <BookOpen size={20} /> },
     { path: "/assessments", name: "Assessments", icon: <ClipboardCheck size={20} /> },

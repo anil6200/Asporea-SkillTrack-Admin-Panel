@@ -7,6 +7,18 @@ exports.createCandidate=async(req,res)=>{
         if(!fullName || !mobileNumber || !emailAddress || !education || !panchayatName || !courseApplied || !status || !enrollmentFeePaid){
             return res.status(400).json({message:"All fields are required"});
     }
+    const existingCandidate = await Candidate.findOne({
+        $or: [
+          { mobileNumber },
+          { emailAddress }
+        ]
+      });
+  
+      if (existingCandidate) {
+        return res.status(409).json({
+          message: "Candidate already exists with same mobile number or email"
+        });
+      }
         const newCandidate=new Candidate({
             fullName,
             mobileNumber,
@@ -54,7 +66,10 @@ exports.updateCandidate = async (req, res) => {
 
 exports.deleteCandidate = async (req, res) => {
         try {
-           const candidate= await Candidate.findByIdAndDelete(req.params.id);
+           const candidate= await Candidate.findByIdAndDelete(req.params.id)
+           if (!candidate) {
+            return res.status(404).json({ message: "Candidate not found" });
+          }
             await logActivity(
                 `Candidate ${candidate.fullName} deleted`,
                 "candidate"

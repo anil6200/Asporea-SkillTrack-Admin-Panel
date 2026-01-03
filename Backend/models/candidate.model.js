@@ -3,15 +3,18 @@ const mongoose = require("mongoose");
 const candidateSchema = new mongoose.Schema({
   fullName: {
     type: String,
-    required: true
+    required: true,
+
   },
   mobileNumber: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   emailAddress: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   education: {
     type: String,

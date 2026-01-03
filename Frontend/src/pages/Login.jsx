@@ -23,8 +23,8 @@ const Login = () => {
       clickSound.volume=0.4;
       clickSound.play().catch(err => console.log("Sound play blocked:", err));
       const timer = setTimeout(() => {
-        navigate("/")
-      }, 3000)
+        navigate("/Dashboard")
+      }, 3000) //
       return () => clearTimeout(timer)
     };
   }, [token, navigate]);

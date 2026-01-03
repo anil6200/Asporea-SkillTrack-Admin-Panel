@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { motion, AnimatePresence } from "framer-motion"; 
+import { motion, AnimatePresence } from "framer-motion";
 import {
   fetchCandidates, createCandidate, editCandidate, removeCandidate
 } from "../features/candidates/candidateSlice";
@@ -9,13 +9,18 @@ import {
   Search, Edit2, Trash2, UserPlus, Filter, X, Inbox
 } from "lucide-react";
 import SuccessModal from "../components/modals/SuccessModal";
+import { fetchCourses } from "../features/courses/courseSlice";
 
 const Candidates = () => {
   const dispatch = useDispatch();
   const { candidates } = useSelector((state) => state.candidates);
   const safeCandidates = Array.isArray(candidates) ? candidates : [];
   const [showSuccess, setShowSuccess] = useState(false);
-const [successMsg, setSuccessMsg] = useState("");
+  const [successMsg, setSuccessMsg] = useState("");
+  const [formError, setFormError] = useState("");
+  const { courses } = useSelector((state) => state.courses);
+  const safeCourses = Array.isArray(courses) ? courses : [];
+
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCandidate, setSelectedCandidate] = useState(null);
@@ -24,6 +29,8 @@ const [successMsg, setSuccessMsg] = useState("");
 
   useEffect(() => {
     dispatch(fetchCandidates());
+    dispatch(fetchCourses());
+
   }, [dispatch]);
 
   const statusColor = (status) => {
@@ -59,7 +66,7 @@ const [successMsg, setSuccessMsg] = useState("");
       dispatch(removeCandidate(candidate._id))
         .unwrap()
         .then(() => {
-          setSuccessMsg("Record Deleted Successfully!"); 
+          setSuccessMsg("Record Deleted Successfully!");
           setShowSuccess(true)
           dispatch(fetchCandidates());
           dispatch(getDashboardStats())
@@ -69,6 +76,7 @@ const [successMsg, setSuccessMsg] = useState("");
 
   const handleSave = (e) => {
     e.preventDefault();
+    setFormError("");
     const form = e.target;
     const data = {
       fullName: form.name.value.trim(),
@@ -85,20 +93,28 @@ const [successMsg, setSuccessMsg] = useState("");
       dispatch(editCandidate({ id: selectedCandidate._id, data }))
         .unwrap()
         .then(() => {
-          setSuccessMsg("Candidate Updated Successfully!"); 
+          setSuccessMsg("Candidate Updated Successfully!");
           setShowSuccess(true)
           dispatch(fetchCandidates());
           dispatch(getDashboardStats())
+          setIsModalOpen(false);
+        })
+        .catch((err) => {
+          setFormError(err || "update failed")
         })
     } else {
       dispatch(createCandidate(data)).unwrap().then(() => {
-        setSuccessMsg("New Candidate Enrolled!"); 
+        setSuccessMsg("New Candidate Enrolled!");
         setShowSuccess(true);
         dispatch(fetchCandidates());
         dispatch(getDashboardStats());
-      });
+        setIsModalOpen(false);
+      })
+        .catch((err) => {
+          setFormError(err || "Candidate already exists")
+        })
     }
-    setIsModalOpen(false);
+
   };
 
   return (
@@ -255,11 +271,20 @@ const [successMsg, setSuccessMsg] = useState("");
 
                 <div className="space-y-2">
                   <label className="text-[10px] font-black uppercase text-slate-500 tracking-widest px-1">Select Course</label>
-                  <select name="course" defaultValue={selectedCandidate?.courseApplied || ""} className="w-full p-4 bg-slate-50 border-2 border-transparent focus:border-indigo-100 focus:bg-white outline-none rounded-2xl font-bold text-sm transition-all appearance-none">
+                  <select
+                    name="course"
+                    defaultValue={selectedCandidate?.courseApplied || ""}
+                    className="w-full p-4 bg-slate-50 border-2 border-transparent
+             focus:border-indigo-100 focus:bg-white outline-none
+             rounded-2xl font-bold text-sm transition-all appearance-none"
+                  >
                     <option value="">Choose Course...</option>
-                    <option>Tally Accounting</option>
-                    <option>Customer Sales Representative</option>
-                    <option>Retail Management</option>
+
+                    {safeCourses.map((course) => (
+                      <option key={course._id} value={course.courseName}>
+                        {course.courseName}
+                      </option>
+                    ))}
                   </select>
                 </div>
 
@@ -282,7 +307,11 @@ const [successMsg, setSuccessMsg] = useState("");
                   <span className="text-sm font-bold text-indigo-900 ">Enrollment Fee Paid & Verified</span>
                 </div>
               </div>
-
+              {formError && (
+                <div className="mx-8 mb-4 p-3 text-sm font-bold text-red-600 bg-red-50 rounded-xl">
+                  {formError}
+                </div>
+              )}
               <div className="p-8 bg-slate-50/50 flex justify-end gap-4">
                 <button type="button" onClick={() => setIsModalOpen(false)} className="px-8 py-3 font-bold text-slate-400 hover:text-slate-600 text-sm">Cancel</button>
                 <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} type="submit" className="px-10 py-3 bg-indigo-600 text-white rounded-2xl font-black text-xs uppercase tracking-widest shadow-lg shadow-indigo-100 hover:bg-indigo-700 transition-all">
@@ -293,10 +322,10 @@ const [successMsg, setSuccessMsg] = useState("");
           </div>
         )}
       </AnimatePresence>
-      <SuccessModal 
-        isOpen={showSuccess} 
-        message={successMsg} 
-        onClose={() => setShowSuccess(false)} 
+      <SuccessModal
+        isOpen={showSuccess}
+        message={successMsg}
+        onClose={() => setShowSuccess(false)}
       />
     </motion.div>
   );
