@@ -86,7 +86,7 @@ const IntroScreen = ({ onComplete }) => {
           />
           
         </div>
-        <p className='text-teal-400 font-bold tracking-[0.4em] uppercase text-[10px] mb-2 opacity-90'>Human Rsource Consultants Pvt.ltd</p>
+        <p className='text-teal-400 font-bold tracking-[0.4em] uppercase text-[10px] mb-2 opacity-90'>Human Resource Consultants Pvt.ltd</p>
         <h2 className="text-teal-400 font-black tracking-[0.3em] uppercase text-sm m-20">Presents</h2>
         <h1 className="text-white text-4xl md:text-4xl font-black uppercase tracking-tighter leading-none mb-10">
           Empowering Careers & <br /> <span className="text-transparent  bg-clip-text bg-linear-to-r from-teal-400 to-indigo-500">
