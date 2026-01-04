@@ -22,36 +22,37 @@ const Dashboard = () => {
     show: { opacity: 1, transition: { staggerChildren: 0.1 } }
   };
 
-  if (isLoading) return <div className="p-8 text-center text-indigo-600 font-black animate-pulse uppercase tracking-widest text-xs">Synchronizing Dashboard...</div>;
+  if (isLoading) return <div className="p-8 text-center text-white font-black animate-pulse uppercase tracking-widest text-xs">Synchronizing Dashboard...</div>;
 
   return (
-    <motion.div variants={container} initial="hidden" animate="show" className="space-y-10 p-2">
+    <div className="relative min-h-screen bg-[#0a1628] overflow-hidden -m-8 p-8">
+      <motion.div variants={container} initial="hidden" animate="show" className="relative z-10 space-y-10 p-2">
   
     {/*  BRANDED HEADER: Bagdogra Centre Branding */}
     <div className="flex justify-between items-end">
       <div className="space-y-1">
         {/* Location Badge */}
         <div className="flex items-center gap-2 mb-3">
-          <span className="px-2.5 py-0.5 bg-indigo-100 text-indigo-700 rounded-md text-[9px] font-black uppercase tracking-widest border border-indigo-200 shadow-sm">
+          <span className="px-2.5 py-0.5 bg-purple-600 text-white rounded-md text-[9px] font-black uppercase tracking-widest border border-purple-500 shadow-sm">
             Bagdogra Training Centre
           </span>
-          <span className="text-[9px] text-slate-500 font-black uppercase tracking-widest">
+          <span className="text-[9px] text-white/80 font-black uppercase tracking-widest">
             • West Bengal 
           </span>
         </div>
   
-        <h1 className="text-4xl font-black text-slate-900 tracking-tight italic leading-none">
-          Admin <span className="text-indigo-600 font-black">Console</span>
+        <h1 className="text-4xl font-black text-white tracking-tight italic leading-none">
+          Admin <span className="text-purple-400 font-black">Console</span>
         </h1>
-        <p className="text-slate-500 text-sm font-medium mt-2">
+        <p className="text-white/80 text-sm font-medium mt-2">
           Real-time metrics for Asporea Skill Development Training Centre ..
         </p>
       </div>
   
       {/*  Right side date display */}
       <div className="hidden md:block text-right pb-1">
-        <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Reporting Date</p>
-        <p className="text-sm font-bold text-slate-900">
+        <p className="text-[10px] font-black text-white/80 uppercase tracking-widest">Reporting Date</p>
+        <p className="text-sm font-bold text-white">
           {new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })}
         </p>
       </div>
@@ -122,7 +123,8 @@ const Dashboard = () => {
           </div>
         
       </div>
-    </motion.div>
+      </motion.div>
+    </div>
   );
 };
 
