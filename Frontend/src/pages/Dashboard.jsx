@@ -5,7 +5,7 @@ import { getDashboardStats } from "../features/dashboard/dashboardSlice";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion"; 
 import timeActivity from "../utils/timeActivity";
-import TrendChart from "../components/trendChart/trendChart";
+import TrendChart from "../components/trendChart/TrendChart";
 
 
 const Dashboard = () => {
