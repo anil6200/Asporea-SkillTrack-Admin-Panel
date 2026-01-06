@@ -9,7 +9,7 @@ const TrendChart = ({ data }) => {
     setIsMounted(true);
   }, []);
 
-  // Colorful palette for zigzag bars: reddish-pink, blue, yellow, teal/cyan, purple, orange
+   
   const colorPalette = [
     '#ef4444', // Reddish-pink
     '#3b82f6', // Blue
@@ -19,7 +19,7 @@ const TrendChart = ({ data }) => {
     '#f97316', // Orange
   ];
 
-  // Process data and assign colors
+  
   const chartData = useMemo(() => {
     if (!data || !Array.isArray(data) || data.length === 0) return [];
     

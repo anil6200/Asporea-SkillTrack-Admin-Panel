@@ -128,7 +128,7 @@ const Dashboard = () => {
   );
 };
 
-/* components polish  */
+
 
 const StatCard = ({ label, value, icon, color, onClick }) => {
   const themeStyles = {
@@ -156,7 +156,7 @@ const StatCard = ({ label, value, icon, color, onClick }) => {
         ${onClick ? "cursor-pointer hover:shadow-xl hover:shadow-indigo-100" : ""}
       `}
     >
-      {/* Icon Section: Becomes white on hover */}
+      
       <div className={`
         w-10 h-10 rounded-xl flex items-center justify-center transition-colors duration-300
         ${style.lightBg} ${style.text} group-hover:bg-white/20 group-hover:text-white
@@ -164,7 +164,7 @@ const StatCard = ({ label, value, icon, color, onClick }) => {
         {icon}
       </div>
 
-      {/* Text Section: Becomes white on hover */}
+      
       <div className="relative z-10">
         <h2 className="text-3xl font-black text-slate-900 tracking-tighter transition-colors duration-300 group-hover:text-white">
           {value}

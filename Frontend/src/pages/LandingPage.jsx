@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion';
+import { motion, useScroll, useSpring, AnimatePresence, useReducedMotion } from 'framer-motion';
 import {
   BookOpen, Users, Globe, Briefcase,
   CheckCircle, Award, ShieldCheck,
@@ -27,7 +27,9 @@ const MissionSection = () => {
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          style={{ willChange: 'transform, opacity' }}
           className="space-y-8"
         >
           <h2 className="text-6xl font-black text-white uppercase leading-[0.9] tracking-tighter">
@@ -48,11 +50,14 @@ const MissionSection = () => {
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          style={{ willChange: 'transform, opacity' }}
           className="relative"
         >
-          <div className="absolute inset-0 bg-teal-500/20 blur-[100px] rounded-full" />
-          <div className="relative h-125 rounded-[4rem] border-12px border-white/5 overflow-hidden shadow-2xl">
-            <img src={mission} alt="Mission" className="w-full h-full object-cover  hover:grayscale-0 transition-all duration-700" />
+          <div className="absolute inset-0 bg-teal-500/20 blur-[80px] rounded-full" style={{ willChange: 'transform', transform: 'translateZ(0)' }} />
+          <div className="relative h-125 rounded-[4rem] border-12px border-white/5 overflow-hidden shadow-2xl" style={{ willChange: 'transform' }}>
+            <img src={mission} alt="Mission" className="w-full h-full object-cover hover:grayscale-0 transition-all duration-700" style={{ willChange: 'filter' }} />
           </div>
         </motion.div>
 
@@ -110,17 +115,21 @@ const IntroScreen = ({ onComplete }) => {
   );
 };
 const FlowingWaveBackground = () => {
+  const shouldReduceMotion = useReducedMotion();
+  
   return (
-    <div className="fixed inset-0 -z-50 overflow-hidden pointer-events-none" style={{ background: '#0a0e1a' }}>
+    <div className="fixed inset-0 -z-50 overflow-hidden pointer-events-none" style={{ background: '#0a0e1a', willChange: 'transform' }}>
     
       <div className="absolute inset-0">
       
         <motion.div
-          className="absolute bottom-[-5%] right-[15%] w-[65%] h-[75%] rounded-full opacity-90 blur-[160px]"
+          className="absolute bottom-[-5%] right-[15%] w-[65%] h-[75%] rounded-full opacity-90 blur-[100px]"
           style={{ 
-            background: "radial-gradient(ellipse at 40% 70%, rgba(236,72,153,0.85) 0%, rgba(219,39,119,0.75) 25%, rgba(168,85,247,0.65) 50%, rgba(147,51,234,0.45) 75%, transparent 100%)"
+            background: "radial-gradient(ellipse at 40% 70%, rgba(236,72,153,0.85) 0%, rgba(219,39,119,0.75) 25%, rgba(168,85,247,0.65) 50%, rgba(147,51,234,0.45) 75%, transparent 100%)",
+            willChange: 'transform',
+            transform: 'translateZ(0)'
           }}
-          animate={{ 
+          animate={shouldReduceMotion ? {} : { 
             scale: [1, 1.1, 1],
             x: [0, 15, 0],
             y: [0, -20, 0],
@@ -134,11 +143,13 @@ const FlowingWaveBackground = () => {
 
       
         <motion.div
-          className="absolute top-[20%] right-[25%] w-[35%] h-[65%] rounded-full opacity-85 blur-[140px]"
+          className="absolute top-[20%] right-[25%] w-[35%] h-[65%] rounded-full opacity-85 blur-[90px]"
           style={{ 
-            background: "radial-gradient(ellipse at 50% 20%, rgba(59,130,246,0.9) 0%, rgba(37,99,235,0.8) 30%, rgba(29,78,216,0.6) 60%, rgba(30,64,175,0.3) 90%, transparent 100%)"
+            background: "radial-gradient(ellipse at 50% 20%, rgba(59,130,246,0.9) 0%, rgba(37,99,235,0.8) 30%, rgba(29,78,216,0.6) 60%, rgba(30,64,175,0.3) 90%, transparent 100%)",
+            willChange: 'transform',
+            transform: 'translateZ(0)'
           }}
-          animate={{ 
+          animate={shouldReduceMotion ? {} : { 
             scale: [1, 1.12, 1],
             x: [0, -10, 0],
             y: [0, 15, 0],
@@ -153,11 +164,13 @@ const FlowingWaveBackground = () => {
 
     
         <motion.div
-          className="absolute top-[15%] right-[5%] w-[30%] h-[70%] rounded-full opacity-80 blur-[130px]"
+          className="absolute top-[15%] right-[5%] w-[30%] h-[70%] rounded-full opacity-80 blur-[80px]"
           style={{ 
-            background: "radial-gradient(ellipse at 50% 15%, rgba(20,184,166,0.9) 0%, rgba(13,148,136,0.8) 30%, rgba(15,118,110,0.6) 60%, rgba(17,94,89,0.3) 90%, transparent 100%)"
+            background: "radial-gradient(ellipse at 50% 15%, rgba(20,184,166,0.9) 0%, rgba(13,148,136,0.8) 30%, rgba(15,118,110,0.6) 60%, rgba(17,94,89,0.3) 90%, transparent 100%)",
+            willChange: 'transform',
+            transform: 'translateZ(0)'
           }}
-          animate={{ 
+          animate={shouldReduceMotion ? {} : { 
             scale: [1, 1.15, 1],
             x: [0, -8, 0],
             y: [0, 20, 0],
@@ -171,44 +184,6 @@ const FlowingWaveBackground = () => {
         />
 
       
-        <motion.div
-          className="absolute top-[25%] left-[5%] w-[40%] h-[50%] rounded-full opacity-50 blur-[120px]"
-          style={{ 
-            background: "radial-gradient(ellipse at 60% 40%, rgba(79,70,229,0.5) 0%, rgba(67,56,202,0.4) 30%, rgba(55,48,163,0.3) 60%, rgba(30,27,75,0.2) 90%, transparent 100%)"
-          }}
-          animate={{ 
-            scale: [1, 1.08, 1],
-            x: [0, 12, 0],
-            y: [0, 18, 0],
-          }}
-          transition={{ 
-            duration: 22,
-            ease: "easeInOut",
-            repeat: Infinity,
-            delay: 0.9
-          }}
-        />
-
-      
-        <motion.div
-          className="absolute bottom-[10%] right-[30%] w-[45%] h-[55%] rounded-full opacity-60 blur-[150px]"
-          style={{ 
-            background: "radial-gradient(ellipse at 50% 60%, rgba(192,132,252,0.7) 0%, rgba(168,85,247,0.6) 40%, rgba(147,51,234,0.4) 80%, transparent 100%)"
-          }}
-          animate={{ 
-            scale: [1, 1.05, 1],
-            x: [0, 8, 0],
-            y: [0, -12, 0],
-          }}
-          transition={{ 
-            duration: 19,
-            ease: "easeInOut",
-            repeat: Infinity,
-            delay: 0.5
-          }}
-        />
-
-      
         <div 
           className="absolute inset-0" 
           style={{ 
@@ -218,70 +193,54 @@ const FlowingWaveBackground = () => {
       </div>
 
       
-      <div className="absolute inset-0 flex items-center justify-center mix-blend-screen opacity-20">
-        <svg
-          className="w-full h-full"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-        >
-          <motion.path
-            d="M 1000 1000 C 800 600 200 800 0 500 C 200 200 800 400 1000 0 L 1000 1000 Z"
-            stroke="rgba(236,72,153,0.25)"
-            strokeWidth="2"
-            fill="none"
-            animate={{
-              d: [
-                "M -200 300 C 200 100, 600 500, 1000 200 S 1400 400, 1600 300",
-                "M -200 400 C 300 600, 700 100, 1100 500 S 1300 200, 1600 400",
-                "M -200 300 C 200 100, 600 500, 1000 200 S 1400 400, 1600 300"
-              ]
-            }}
-            transition={{
-              duration: 18,
-              ease: "easeInOut",
-              repeat: Infinity
-            }}
-          />
+      {!shouldReduceMotion && (
+        <div className="absolute inset-0 flex items-center justify-center mix-blend-screen opacity-20" style={{ willChange: 'transform', transform: 'translateZ(0)' }}>
+          <svg
+            className="w-full h-full"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="none"
+            style={{ willChange: 'transform' }}
+          >
+            <motion.path
+              d="M 1000 1000 C 800 600 200 800 0 500 C 200 200 800 400 1000 0 L 1000 1000 Z"
+              stroke="rgba(236,72,153,0.25)"
+              strokeWidth="2"
+              fill="none"
+              animate={{
+                d: [
+                  "M -200 300 C 200 100, 600 500, 1000 200 S 1400 400, 1600 300",
+                  "M -200 400 C 300 600, 700 100, 1100 500 S 1300 200, 1600 400",
+                  "M -200 300 C 200 100, 600 500, 1000 200 S 1400 400, 1600 300"
+                ]
+              }}
+              transition={{
+                duration: 18,
+                ease: "easeInOut",
+                repeat: Infinity
+              }}
+            />
 
-          <motion.path
-            d="M 1000 1000 C 800 600 200 800 0 500 C 200 200 800 400 1000 0 L 1000 1000 Z"
-            stroke="rgba(59,130,246,0.25)"
-            strokeWidth="2"
-            fill="none"
-            animate={{
-              d: [
-                "M -200 500 C 400 300, 800 700, 1200 400 S 1400 600, 1600 500",
-                "M -200 200 C 200 50, 600 300, 1000 100 S 1300 400, 1600 200",
-                "M -200 500 C 400 300, 800 700, 1200 400 S 1400 600, 1600 500"
-              ]
-            }}
-            transition={{
-              duration: 18,
-              ease: "easeInOut",
-              repeat: Infinity
-            }}
-          />
-
-          <motion.path
-            d="M 1000 1000 C 800 600 200 800 0 500 C 200 200 800 400 1000 0 L 1000 1000 Z"
-            stroke="rgba(20,184,166,0.25)"
-            strokeWidth="2"
-            fill="none"
-            animate={{
-              d: [
-                "M -200 100 C 300 300, 700 -50, 1100 200 S 1400 0, 1600 100",
-                "M -200 150 C 400 0, 800 400, 1200 100 S 1500 200, 1600 150",
-                "M -200 100 C 300 300, 700 -50, 1100 200 S 1400 0, 1600 100"
-              ]
-            }}
-            transition={{
-              duration: 18,
-              ease: "easeInOut",
-              repeat: Infinity
-            }}
-          />
-        </svg>
-      </div>
+            <motion.path
+              d="M 1000 1000 C 800 600 200 800 0 500 C 200 200 800 400 1000 0 L 1000 1000 Z"
+              stroke="rgba(59,130,246,0.25)"
+              strokeWidth="2"
+              fill="none"
+              animate={{
+                d: [
+                  "M -200 500 C 400 300, 800 700, 1200 400 S 1400 600, 1600 500",
+                  "M -200 200 C 200 50, 600 300, 1000 100 S 1300 400, 1600 200",
+                  "M -200 500 C 400 300, 800 700, 1200 400 S 1400 600, 1600 500"
+                ]
+              }}
+              transition={{
+                duration: 18,
+                ease: "easeInOut",
+                repeat: Infinity
+              }}
+            />
+          </svg>
+        </div>
+      )}
     </div>
   );
 };
@@ -296,7 +255,7 @@ const LandingPage = () => {
   }, []);
   const navigate = useNavigate();
   const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
+  const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
 
 
   const scrollTo = (id) => {
@@ -307,16 +266,16 @@ const LandingPage = () => {
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 60 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] } }
   };
 
   const staggerContainer = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
+    visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
   };
 
   return (
-    <div className="min-h-screen bg-transparent text-white font-sans selection:bg-indigo-100 overflow-x-hidden relative">
+    <div className="min-h-screen bg-transparent text-white font-sans selection:bg-indigo-100 overflow-x-hidden relative" style={{ willChange: 'scroll-position' }}>
       <AnimatePresence>
         {showIntro && <IntroScreen />}
       </AnimatePresence>
@@ -324,7 +283,10 @@ const LandingPage = () => {
       <FlowingWaveBackground />
 
 
-      <motion.div className="fixed top-0 left-0 right-0 h-1.5 bg-indigo-800 z-110 origin-left" style={{ scaleX }} />
+      <motion.div 
+        className="fixed top-0 left-0 right-0 h-1.5 bg-indigo-800 z-110 origin-left" 
+        style={{ scaleX, willChange: 'transform', transform: 'translateZ(0)' }} 
+      />
 
 
       <nav className="fixed top-0 w-full z-110 px-8 md:px-20 h-28 flex items-center justify-between 
@@ -379,7 +341,7 @@ const LandingPage = () => {
       {/*  HERO SECTION */}
       <header className="relative pt-64 pb-32 px-8 md:px-20 overflow-hidden min-h-screen flex items-center text-white">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-32 items-center">
-          <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="z-10">
+          <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="z-10" style={{ willChange: 'transform, opacity' }}>
             <motion.span variants={fadeInUp} className="inline-block px-5 py-2 mb-8 text-[10px] font-black tracking-[0.3em] text-indigo-200 uppercase bg-white/10 border border-white/30 rounded-full shadow-sm">
               Bagdogra SMSDC Training Centre
             </motion.span>
@@ -395,20 +357,22 @@ const LandingPage = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.9, x: 50 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            style={{ willChange: 'transform, opacity' }}
             className="relative"
           >
 
             <motion.div
               animate={{ y: [0, -15, 0] }}
               transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+              style={{ willChange: 'transform', transform: 'translateZ(0)' }}
               className="absolute -top-12 -right-8 z-20 bg-white p-6 rounded-[2.5rem] shadow-2xl border border-indigo-50 flex flex-col items-center"
             >
 
             </motion.div>
 
-            <div className="relative h-150 w-full bg-white rounded-[4.5rem] border-16 border-white shadow-[0_50px_100px_-20px_rgba(79,70,229,0.2)] overflow-hidden group">
-              <img src={lab} alt="Training Lab" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
+            <div className="relative h-150 w-full bg-white rounded-[4.5rem] border-16 border-white shadow-[0_50px_100px_-20px_rgba(79,70,229,0.2)] overflow-hidden group" style={{ willChange: 'transform' }}>
+              <img src={lab} alt="Training Lab" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" style={{ willChange: 'transform' }} />
               <div className="absolute inset-0 bg-linear-to-t from-indigo-900/30 to-transparent"></div>
             </div>
           </motion.div>
@@ -419,11 +383,12 @@ const LandingPage = () => {
       <section className="py-32 px-8 md:px-20">
         <motion.div
           initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}
+          style={{ willChange: 'transform, opacity' }}
           className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-24 items-center"
         >
           <div className="relative order-2 lg:order-1">
-            <div className="h-125 bg-slate-100 rounded-[4rem] border-8 border-white shadow-2xl overflow-hidden group">
-              <img src={targetImg} alt="Target" className="w-full h-full object-cover transition-transform group-hover:scale-110 duration-700" />
+            <div className="h-125 bg-slate-100 rounded-[4rem] border-8 border-white shadow-2xl overflow-hidden group" style={{ willChange: 'transform' }}>
+              <img src={targetImg} alt="Target" className="w-full h-full object-cover transition-transform group-hover:scale-110 duration-700" style={{ willChange: 'transform' }} />
             </div>
           </div>
           <div className="order-1 lg:order-2">
@@ -460,8 +425,9 @@ const LandingPage = () => {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-50px" }}
             variants={staggerContainer}
+            style={{ willChange: 'transform, opacity' }}
             className="grid md:grid-cols-3 gap-12"
           >
             {[
@@ -493,7 +459,7 @@ const LandingPage = () => {
               <motion.div
                 key={i}
                 variants={fadeInUp}
-
+                style={{ willChange: 'transform' }}
                 className={`p-12 bg-white rounded-[4.5rem] border border-slate-100 
                      ${card.hoverBg} group transition-all duration-500 
                      cursor-pointer shadow-xl hover:-translate-y-4`}
@@ -523,7 +489,14 @@ const LandingPage = () => {
       {/*  STRUCTURE & DELIVERY */}
       <section id="structure" className="py-32 px-8 md:px-20 overflow-hidden">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-24 items-center">
-          <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} className="lg:w-1/2">
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }} 
+            whileInView={{ opacity: 1, x: 0 }} 
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            style={{ willChange: 'transform, opacity' }}
+            className="lg:w-1/2"
+          >
             <h2 className="text-5xl font-black mb-12 uppercase text-white leading-tight">Training Structure</h2>
             <div className="grid grid-cols-2 gap-12 mb-16">
               {[
@@ -544,9 +517,16 @@ const LandingPage = () => {
             </div>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} className="lg:w-1/2 relative group">
-            <div className="relative h-125 w-full bg-slate-100 rounded-[4rem] border-12 border-white shadow-2xl overflow-hidden">
-              <img src={training} alt="Training" className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-1000" />
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }} 
+            whileInView={{ opacity: 1, scale: 1 }} 
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            style={{ willChange: 'transform, opacity' }}
+            className="lg:w-1/2 relative group"
+          >
+            <div className="relative h-125 w-full bg-slate-100 rounded-[4rem] border-12 border-white shadow-2xl overflow-hidden" style={{ willChange: 'transform' }}>
+              <img src={training} alt="Training" className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-1000" style={{ willChange: 'transform' }} />
               <div className="absolute inset-0 bg-linear-to-t from-slate-900/80 via-transparent to-transparent flex flex-col justify-end p-12">
                 <h3 className="text-2xl font-black text-white uppercase mb-2">Delivery Methods</h3>
                 <p className="text-slate-300 text-sm normal-case">Blended approach with real-world technical simulations.</p>
@@ -570,7 +550,9 @@ const LandingPage = () => {
               { id: '04', title: 'Joint Certification', icon: <FileBadge />, color: 'purple', desc: 'Recognised industry certificates.' }
             ].map((step, i) => (
               <motion.div
-                key={i} whileHover={{ y: -12 }}
+                key={i} 
+                whileHover={{ y: -12 }}
+                style={{ willChange: 'transform' }}
                 className={`group bg-white p-10 rounded-[4rem] border border-slate-100 hover:bg-${step.color}-600 transition-all duration-500 shadow-sm hover:shadow-2xl cursor-pointer`}
               >
                 <div className={`w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-10 shadow-md text-${step.color}-600 group-hover:bg-white/20 group-hover:text-black transition-all`}>
@@ -592,13 +574,21 @@ const LandingPage = () => {
             <h2 className="text-5xl font-black uppercase tracking-tighter text-white">Placement Pathway</h2>
           </div>
           <div className="grid lg:grid-cols-2 gap-16 mb-20">
-            <motion.div whileHover={{ scale: 1.02 }} className="p-16 bg-slate-900 rounded-[5rem] text-white shadow-2xl group relative overflow-hidden">
+            <motion.div 
+              whileHover={{ scale: 1.02 }} 
+              style={{ willChange: 'transform' }}
+              className="p-16 bg-slate-900 rounded-[5rem] text-white shadow-2xl group relative overflow-hidden"
+            >
               <div className="absolute top-0 right-0 p-12 opacity-5"><TrendingUp size={200} /></div>
               <h3 className="text-3xl font-black mb-8 uppercase text-indigo-400">Domestic</h3>
               <p className="text-slate-400 text-lg leading-relaxed mb-10 normal-case font-bold">Active partnerships with leading retail chains and BPOs across India.</p>
               <div className="flex items-center gap-4 text-xs font-black uppercase tracking-widest"><CheckCircle className="text-green-400" /> Leading Retail Chains</div>
             </motion.div>
-            <motion.div whileHover={{ scale: 1.02 }} className="p-16 bg-indigo-600 rounded-[5rem] text-white shadow-2xl group relative overflow-hidden">
+            <motion.div 
+              whileHover={{ scale: 1.02 }} 
+              style={{ willChange: 'transform' }}
+              className="p-16 bg-indigo-600 rounded-[5rem] text-white shadow-2xl group relative overflow-hidden"
+            >
               <div className="absolute top-0 right-0 p-12 opacity-10"><Globe size={200} /></div>
               <h3 className="text-3xl font-black mb-8 uppercase text-indigo-100">International</h3>
               <p className="text-indigo-100 text-lg leading-relaxed mb-10 normal-case font-bold">Exciting opportunities in Gulf countries with competitive packages.</p>
@@ -610,12 +600,20 @@ const LandingPage = () => {
 
       {/* YEKKIN SCHEME */}
       <motion.section
-        initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
+        initial={{ opacity: 0 }} 
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        style={{ willChange: 'opacity' }}
         className="py-32 px-8 md:px-20 bg-slate-900 rounded-[6rem] mx-8 md:mx-20 overflow-hidden relative group"
       >
         <div className="absolute inset-0 bg-indigo-600/10 group-hover:bg-indigo-600/20 transition-colors"></div>
         <div className="max-w-5xl mx-auto text-center relative z-10">
-          <motion.div animate={{ rotate: 360 }} transition={{ duration: 20, repeat: Infinity, ease: "linear" }}>
+          <motion.div 
+            animate={{ rotate: 360 }} 
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            style={{ willChange: 'transform', transform: 'translateZ(0)' }}
+          >
             <Globe className="mx-auto text-indigo-400 mb-10 opacity-40" size={80} />
           </motion.div>
           <h2 className="text-4xl md:text-7xl font-black mb-12 uppercase text-white tracking-tighter italic">International YEKKIN Scheme</h2>
@@ -641,12 +639,16 @@ const LandingPage = () => {
               { m: 'Ongoing', t: 'Scale-Up', p: '4', i: <TrendingUp />, c: 'emerald', d: 'Continuous batch operations with enhanced international placement linkages and programme expansion' }
             ].map((step, i) => (
               <motion.div
-                key={i} whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 50 }}
+                key={i} 
+                whileInView={{ opacity: 1, y: 0 }} 
+                initial={{ opacity: 0, y: 50 }}
+                viewport={{ once: true, margin: "-50px" }}
                 whileHover={{
                   scale: 1.05,
                   y: i % 2 !== 0 ? 70 : -10
                 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                style={{ willChange: 'transform, opacity' }}
                 className={`bg-white/5 backdrop-blur-xl p-10 rounded-[4rem] border border-white/10 shadow-2xl relative ${i % 2 !== 0 ? 'lg:mt-20' : ''}`}
               >
                 <div className={`w-16 h-16 bg-${step.c}-600 text-white rounded-3xl flex items-center justify-center mb-8 shadow-xl`}>
@@ -686,9 +688,9 @@ const LandingPage = () => {
               </div>
             </div>
             <div className="relative group flex justify-end">
-              <div className="absolute -inset-6 bg-indigo-600/10 rounded-[4rem] rotate-3 blur-2xl"></div>
-              <div className="relative w-80 h-48 bg-slate-800 rounded-[3.5rem] border-4 border-white/10 shadow-3xl overflow-hidden">
-                <img src={footerThumb} alt="Footer" className="w-full h-full object-cover group-hover:scale-125 transition-transform duration-2000" />
+              <div className="absolute -inset-6 bg-indigo-600/10 rounded-[4rem] rotate-3 blur-2xl" style={{ willChange: 'transform', transform: 'translateZ(0)' }}></div>
+              <div className="relative w-80 h-48 bg-slate-800 rounded-[3.5rem] border-4 border-white/10 shadow-3xl overflow-hidden" style={{ willChange: 'transform' }}>
+                <img src={footerThumb} alt="Footer" className="w-full h-full object-cover group-hover:scale-125 transition-transform duration-2000" style={{ willChange: 'transform' }} />
               </div>
             </div>
           </div>
