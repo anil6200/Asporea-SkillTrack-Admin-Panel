@@ -577,7 +577,7 @@ const LandingPage = () => {
                   {React.cloneElement(step.icon, { size: 32 })}
                 </div>
                 <div className="text-slate-500  text-3xl font-black mb-4 group-hover:text-black transition-colors">{step.id}</div>
-                <h4 className=" text-[20px] text-slate-500 normal-case leading-relaxed group-hover:text-black transition-colors  transition-transform hover:scale-10  font-black">{step.title}</h4>
+                <h4 className=" text-[20px] text-slate-500 normal-case leading-relaxed group-hover:text-black transition-colors   font-black">{step.title}</h4>
                 <p className="text-[15px] text-slate-500 normal-case leading-relaxed group-hover:text-black transition-colors  font-black">{step.desc}</p>
               </motion.div>
             ))}
