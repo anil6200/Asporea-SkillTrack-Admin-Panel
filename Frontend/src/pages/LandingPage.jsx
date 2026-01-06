@@ -562,7 +562,7 @@ const LandingPage = () => {
           <div className="text-center mb-24">
             <h2 className="text-4xl font-black uppercase text-white">Robust Assessment Framework</h2>
           </div>
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-4 gap-8 transition-transform hover:scale-105">
             {[
               { id: '01', title: 'Internal Assessment', icon: <ClipboardList />, color: 'indigo', desc: 'Weekly quizzes to track progress.' },
               { id: '02', title: 'Practical Skills', icon: <MonitorPlay />, color: 'emerald', desc: 'Hands-on evaluation in labs.' },
@@ -577,7 +577,7 @@ const LandingPage = () => {
                   {React.cloneElement(step.icon, { size: 32 })}
                 </div>
                 <div className="text-slate-500  text-3xl font-black mb-4 group-hover:text-black transition-colors">{step.id}</div>
-                <h4 className=" text-[20px] text-slate-500 normal-case leading-relaxed group-hover:text-black transition-colors  font-black">{step.title}</h4>
+                <h4 className=" text-[20px] text-slate-500 normal-case leading-relaxed group-hover:text-black transition-colors  transition-transform hover:scale-10  font-black">{step.title}</h4>
                 <p className="text-[15px] text-slate-500 normal-case leading-relaxed group-hover:text-black transition-colors  font-black">{step.desc}</p>
               </motion.div>
             ))}
