@@ -33,7 +33,7 @@ const MissionSection = () => {
           <h2 className="text-6xl font-black text-white uppercase leading-[0.9] tracking-tighter">
             Our Mission: <br /> <span className="text-teal-400 underline decoration-white/20">Empowering</span> <br /> the Community
           </h2>
-          <div className="space-y-6 text-slate-600 text-xl leading-relaxed font-medium">
+          <div className="space-y-6 text-slate-300 text-xl leading-relaxed font-medium">
             <p>
               Asporea is committed to building a future-ready workforce by bridging the gap between local talent and global industry standards.
             </p>
@@ -111,34 +111,130 @@ const IntroScreen = ({ onComplete }) => {
 };
 const FlowingWaveBackground = () => {
   return (
+    <div className="fixed inset-0 -z-50 overflow-hidden pointer-events-none" style={{ background: '#0a0e1a' }}>
+    
+      <div className="absolute inset-0">
+      
+        <motion.div
+          className="absolute bottom-[-5%] right-[15%] w-[65%] h-[75%] rounded-full opacity-90 blur-[160px]"
+          style={{ 
+            background: "radial-gradient(ellipse at 40% 70%, rgba(236,72,153,0.85) 0%, rgba(219,39,119,0.75) 25%, rgba(168,85,247,0.65) 50%, rgba(147,51,234,0.45) 75%, transparent 100%)"
+          }}
+          animate={{ 
+            scale: [1, 1.1, 1],
+            x: [0, 15, 0],
+            y: [0, -20, 0],
+          }}
+          transition={{ 
+            duration: 20,
+            ease: "easeInOut",
+            repeat: Infinity
+          }}
+        />
 
-    <div className=" fixed inset-0 -z-50 overflow-hidden bg-linear-to-r from-cyan-500 to-pink-600 pointer-events-none">
+      
+        <motion.div
+          className="absolute top-[20%] right-[25%] w-[35%] h-[65%] rounded-full opacity-85 blur-[140px]"
+          style={{ 
+            background: "radial-gradient(ellipse at 50% 20%, rgba(59,130,246,0.9) 0%, rgba(37,99,235,0.8) 30%, rgba(29,78,216,0.6) 60%, rgba(30,64,175,0.3) 90%, transparent 100%)"
+          }}
+          animate={{ 
+            scale: [1, 1.12, 1],
+            x: [0, -10, 0],
+            y: [0, 15, 0],
+          }}
+          transition={{ 
+            duration: 18,
+            ease: "easeInOut",
+            repeat: Infinity,
+            delay: 0.3
+          }}
+        />
 
+    
+        <motion.div
+          className="absolute top-[15%] right-[5%] w-[30%] h-[70%] rounded-full opacity-80 blur-[130px]"
+          style={{ 
+            background: "radial-gradient(ellipse at 50% 15%, rgba(20,184,166,0.9) 0%, rgba(13,148,136,0.8) 30%, rgba(15,118,110,0.6) 60%, rgba(17,94,89,0.3) 90%, transparent 100%)"
+          }}
+          animate={{ 
+            scale: [1, 1.15, 1],
+            x: [0, -8, 0],
+            y: [0, 20, 0],
+          }}
+          transition={{ 
+            duration: 16,
+            ease: "easeInOut",
+            repeat: Infinity,
+            delay: 0.6
+          }}
+        />
 
-      <div className="absolute inset-0 flex items-center justify-center">
+      
+        <motion.div
+          className="absolute top-[25%] left-[5%] w-[40%] h-[50%] rounded-full opacity-50 blur-[120px]"
+          style={{ 
+            background: "radial-gradient(ellipse at 60% 40%, rgba(79,70,229,0.5) 0%, rgba(67,56,202,0.4) 30%, rgba(55,48,163,0.3) 60%, rgba(30,27,75,0.2) 90%, transparent 100%)"
+          }}
+          animate={{ 
+            scale: [1, 1.08, 1],
+            x: [0, 12, 0],
+            y: [0, 18, 0],
+          }}
+          transition={{ 
+            duration: 22,
+            ease: "easeInOut",
+            repeat: Infinity,
+            delay: 0.9
+          }}
+        />
+
+      
+        <motion.div
+          className="absolute bottom-[10%] right-[30%] w-[45%] h-[55%] rounded-full opacity-60 blur-[150px]"
+          style={{ 
+            background: "radial-gradient(ellipse at 50% 60%, rgba(192,132,252,0.7) 0%, rgba(168,85,247,0.6) 40%, rgba(147,51,234,0.4) 80%, transparent 100%)"
+          }}
+          animate={{ 
+            scale: [1, 1.05, 1],
+            x: [0, 8, 0],
+            y: [0, -12, 0],
+          }}
+          transition={{ 
+            duration: 19,
+            ease: "easeInOut",
+            repeat: Infinity,
+            delay: 0.5
+          }}
+        />
+
+      
+        <div 
+          className="absolute inset-0" 
+          style={{ 
+            background: "linear-gradient(180deg, rgba(10,14,26,0.3) 0%, rgba(10,14,26,0.1) 30%, transparent 60%, rgba(10,14,26,0.2) 100%)"
+          }} 
+        />
+      </div>
+
+      
+      <div className="absolute inset-0 flex items-center justify-center mix-blend-screen opacity-20">
         <svg
           className="w-full h-full"
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="none"
         >
-
           <motion.path
-
             d="M 1000 1000 C 800 600 200 800 0 500 C 200 200 800 400 1000 0 L 1000 1000 Z"
-
-
-            stroke="white"
+            stroke="rgba(236,72,153,0.25)"
             strokeWidth="2"
             fill="none"
-            className="opacity-50"
-
-            //  ANIMATION 
             animate={{
-
               d: [
                 "M -200 300 C 200 100, 600 500, 1000 200 S 1400 400, 1600 300",
                 "M -200 400 C 300 600, 700 100, 1100 500 S 1300 200, 1600 400",
-                "M -200 300 C 200 100, 600 500, 1000 200 S 1400 400, 1600 300"]
+                "M -200 300 C 200 100, 600 500, 1000 200 S 1400 400, 1600 300"
+              ]
             }}
             transition={{
               duration: 18,
@@ -148,22 +244,16 @@ const FlowingWaveBackground = () => {
           />
 
           <motion.path
-
             d="M 1000 1000 C 800 600 200 800 0 500 C 200 200 800 400 1000 0 L 1000 1000 Z"
-
-
-            stroke="white"
+            stroke="rgba(59,130,246,0.25)"
             strokeWidth="2"
             fill="none"
-            className="opacity-50"
-
-            //  ANIMATION 
             animate={{
-
               d: [
                 "M -200 500 C 400 300, 800 700, 1200 400 S 1400 600, 1600 500",
                 "M -200 200 C 200 50, 600 300, 1000 100 S 1300 400, 1600 200",
-                "M -200 500 C 400 300, 800 700, 1200 400 S 1400 600, 1600 500"]
+                "M -200 500 C 400 300, 800 700, 1200 400 S 1400 600, 1600 500"
+              ]
             }}
             transition={{
               duration: 18,
@@ -173,22 +263,16 @@ const FlowingWaveBackground = () => {
           />
 
           <motion.path
-
             d="M 1000 1000 C 800 600 200 800 0 500 C 200 200 800 400 1000 0 L 1000 1000 Z"
-
-
-            stroke="white"
+            stroke="rgba(20,184,166,0.25)"
             strokeWidth="2"
             fill="none"
-            className="opacity-50"
-
-            //  ANIMATION 
             animate={{
-
               d: [
                 "M -200 100 C 300 300, 700 -50, 1100 200 S 1400 0, 1600 100",
-              "M -200 150 C 400 0, 800 400, 1200 100 S 1500 200, 1600 150",
-              "M -200 100 C 300 300, 700 -50, 1100 200 S 1400 0, 1600 100"]
+                "M -200 150 C 400 0, 800 400, 1200 100 S 1500 200, 1600 150",
+                "M -200 100 C 300 300, 700 -50, 1100 200 S 1400 0, 1600 100"
+              ]
             }}
             transition={{
               duration: 18,
@@ -232,7 +316,7 @@ const LandingPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50/50 text-slate-900 font-sans selection:bg-indigo-100 overflow-x-hidden relative">
+    <div className="min-h-screen bg-transparent text-white font-sans selection:bg-indigo-100 overflow-x-hidden relative">
       <AnimatePresence>
         {showIntro && <IntroScreen />}
       </AnimatePresence>
@@ -293,16 +377,16 @@ const LandingPage = () => {
       </nav>
 
       {/*  HERO SECTION */}
-      <header className="relative pt-64 pb-32 px-8 md:px-20 overflow-hidden min-h-screen flex items-center">
+      <header className="relative pt-64 pb-32 px-8 md:px-20 overflow-hidden min-h-screen flex items-center text-white">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-32 items-center">
           <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="z-10">
-            <motion.span variants={fadeInUp} className="inline-block px-5 py-2 mb-8 text-[10px] font-black tracking-[0.3em] text-indigo-700 uppercase bg-white border border-indigo-100 rounded-full shadow-sm">
+            <motion.span variants={fadeInUp} className="inline-block px-5 py-2 mb-8 text-[10px] font-black tracking-[0.3em] text-indigo-200 uppercase bg-white/10 border border-white/30 rounded-full shadow-sm">
               Bagdogra SMSDC Training Centre
             </motion.span>
-            <motion.h1 variants={fadeInUp} className="text-6xl lg:text-8xl font-black text-slate-900 mb-8 leading-[0.85] uppercase tracking-tighter">
-              Building <br /> <span className="text-indigo-600">Tomorrow's</span> <br /> Workforce
+            <motion.h1 variants={fadeInUp} className="text-6xl lg:text-8xl font-black text-white mb-8 leading-[0.85] uppercase tracking-tighter drop-shadow-[0_10px_40px_rgba(59,130,246,0.45)]">
+              Building <br /> <span className="text-cyan-200">Tomorrow's</span> <br /> Workforce
             </motion.h1>
-            <motion.p variants={fadeInUp} className="text-slate-600 font-bold font-sans text-xl mb-12 max-w-lg leading-relaxed normal-case">
+            <motion.p variants={fadeInUp} className="text-slate-200 font-bold font-sans text-xl mb-12 max-w-lg leading-relaxed normal-case">
               Empowering the community across 35 panchayats through structured skill training and guaranteed placement opportunities via the Tenzing Norway Samiti network.
             </motion.p>
 
@@ -343,8 +427,8 @@ const LandingPage = () => {
             </div>
           </div>
           <div className="order-1 lg:order-2">
-            <motion.h2 variants={fadeInUp} className="text-5xl font-black mb-12 uppercase text-slate-900 leading-tight tracking-tighter">Target Audience <br /> & Eligibility</motion.h2>
-            <div className="space-y-12 text-indigo-600">
+            <motion.h2 variants={fadeInUp} className="text-5xl font-black mb-12 uppercase text-white leading-tight tracking-tighter">Target Audience <br /> & Eligibility</motion.h2>
+            <div className="space-y-12 text-indigo-300">
               {[
                 { icon: <GraduationCap />, title: 'Educational Background', desc: '10th pass to graduates seeking immediate employment opportunities.', color: 'indigo' },
                 { icon: <Users />, title: 'Women Candidates', desc: 'Special focus on training women for hostess and customer service roles.', color: 'emerald' },
@@ -355,8 +439,8 @@ const LandingPage = () => {
                     {React.cloneElement(item.icon, { size: 32 })}
                   </div>
                   <div>
-                    <h4 className="font-black uppercase text-base mb-2 text-slate-800">{item.title}</h4>
-                    <p className="text-slate-700 text-sm normal-case leading-relaxed font-medium">{item.desc}</p>
+                    <h4 className="font-black uppercase text-base mb-2 text-white">{item.title}</h4>
+                    <p className="text-slate-300 text-sm normal-case leading-relaxed font-medium">{item.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -369,7 +453,7 @@ const LandingPage = () => {
       <section id="courses" className="py-32 px-8 md:px-20  relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-24">
-            <h2 className="text-5xl font-black uppercase tracking-tighter text-slate-900">Career-Ready Training</h2>
+            <h2 className="text-5xl font-black uppercase tracking-tighter text-white">Career-Ready Training</h2>
             <div className="h-2 w-32 bg-indigo-600 mx-auto mt-6 rounded-full"></div>
           </div>
 
@@ -420,7 +504,7 @@ const LandingPage = () => {
                 </div>
 
 
-                <h3 className="text-3xl font-black mb-8 uppercase text-slate-900 group-hover:text-white transition-colors tracking-tight">
+                <h3 className="text-3xl font-black mb-8 uppercase text-white group-hover:text-white transition-colors tracking-tight">
                   {card.title}
                 </h3>
 
@@ -440,7 +524,7 @@ const LandingPage = () => {
       <section id="structure" className="py-32 px-8 md:px-20 overflow-hidden">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-24 items-center">
           <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} className="lg:w-1/2">
-            <h2 className="text-5xl font-black mb-12 uppercase text-slate-900 leading-tight">Training Structure</h2>
+            <h2 className="text-5xl font-black mb-12 uppercase text-white leading-tight">Training Structure</h2>
             <div className="grid grid-cols-2 gap-12 mb-16">
               {[
                 { label: 'Batch Size', value: '25-30 Candidates' },
@@ -449,14 +533,14 @@ const LandingPage = () => {
                 { label: 'Assessment', value: 'Fortnightly Mocks' }
               ].map((s, i) => (
                 <div key={i} className="group">
-                  <h4 className="font-black text-indigo-600 text-xs uppercase tracking-widest mb-2 group-hover:translate-x-2 transition-transform">{s.label}</h4>
-                  <p className="text-slate-500 font-black text-2xl tracking-tight">{s.value}</p>
+                  <h4 className="font-black text-indigo-300 text-xs uppercase tracking-widest mb-2 group-hover:translate-x-2 transition-transform">{s.label}</h4>
+                  <p className="text-slate-300 font-black text-2xl tracking-tight">{s.value}</p>
                 </div>
               ))}
             </div>
             <div className="flex gap-6">
-              <span className="px-8 py-3 bg-slate-50 rounded-full text-xs font-black uppercase text-indigo-600 shadow-sm border border-indigo-50">Classroom</span>
-              <span className="px-8 py-3 bg-slate-50 rounded-full text-xs font-black uppercase text-indigo-600 shadow-sm border border-indigo-50">Practical Lab</span>
+              <span className="px-8 py-3 bg-white/10 backdrop-blur-md rounded-full text-xs font-black uppercase text-white shadow-sm border border-white/20">Classroom</span>
+              <span className="px-8 py-3 bg-white/10 backdrop-blur-md rounded-full text-xs font-black uppercase text-white shadow-sm border border-white/20">Practical Lab</span>
             </div>
           </motion.div>
 
@@ -476,7 +560,7 @@ const LandingPage = () => {
       <section id="assessment" className="py-32 px-8 md:px-20  backdrop-blur-sm">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-24">
-            <h2 className="text-4xl font-black uppercase text-slate-900">Robust Assessment Framework</h2>
+            <h2 className="text-4xl font-black uppercase text-white">Robust Assessment Framework</h2>
           </div>
           <div className="grid md:grid-cols-4 gap-8">
             {[
@@ -492,9 +576,9 @@ const LandingPage = () => {
                 <div className={`w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-10 shadow-md text-${step.color}-600 group-hover:bg-white/20 group-hover:text-black transition-all`}>
                   {React.cloneElement(step.icon, { size: 32 })}
                 </div>
-                <div className="text-slate-500 font-black mb-4 group-hover:text-black transition-colors">{step.id}</div>
-                <h4 className="font-black text-sm uppercase mb-4 group-hover:text-black transition-colors tracking-tight">{step.title}</h4>
-                <p className="text-[13px] text-slate-500 normal-case leading-relaxed group-hover:text-black transition-colors  font-black">{step.desc}</p>
+                <div className="text-slate-500  text-3xl font-black mb-4 group-hover:text-black transition-colors">{step.id}</div>
+                <h4 className=" text-[20px] text-slate-500 normal-case leading-relaxed group-hover:text-black transition-colors  font-black">{step.title}</h4>
+                <p className="text-[15px] text-slate-500 normal-case leading-relaxed group-hover:text-black transition-colors  font-black">{step.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -505,7 +589,7 @@ const LandingPage = () => {
       <section id="placement" className="py-32 px-8 md:px-20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-24">
-            <h2 className="text-5xl font-black uppercase tracking-tighter text-slate-900">Placement Pathway</h2>
+            <h2 className="text-5xl font-black uppercase tracking-tighter text-white">Placement Pathway</h2>
           </div>
           <div className="grid lg:grid-cols-2 gap-16 mb-20">
             <motion.div whileHover={{ scale: 1.02 }} className="p-16 bg-slate-900 rounded-[5rem] text-white shadow-2xl group relative overflow-hidden">
@@ -547,9 +631,9 @@ const LandingPage = () => {
       {/*  TIMELINE */}
       <section id="timeline" className="py-32 px-8 md:px-20  ">
         <div className="max-w-7xl mx-auto text-center  ">
-          <h2 className="text-5xl font-black uppercase  text-slate-900 mb-24 tracking-widest ">Implementation Timeline</h2>
+          <h2 className="text-5xl font-black uppercase  text-white mb-24 tracking-widest ">Implementation Timeline</h2>
           <div className="grid md:grid-cols-4 gap-12 relative">
-            <div className="hidden lg:block absolute top-1/2 left-0 w-full h-1 bg-indigo-100 -translate-y-1/2 -z-10  "></div>
+            <div className="hidden lg:block absolute top-1/2 left-0 w-full h-1 bg-white/10 -translate-y-1/2 -z-10  "></div>
             {[
               { m: 'Month 1', t: 'Foundation', p: '1', i: <ShieldCheck />, c: 'indigo', d: 'Centre infrastructure setup , community mobilisation compaigns across all panchayats' },
               { m: 'Month 2', t: 'Training Delivery', p: '2', i: <MonitorPlay />, c: 'emerald', d: 'First batch enrollment , intensive training delivery with continuous mid term assessments and progress monitoring ' },
@@ -563,17 +647,17 @@ const LandingPage = () => {
                   y: i % 2 !== 0 ? 70 : -10
                 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                className={`bg-white p-10 rounded-[4rem] border border-slate-100 shadow-xl relative ${i % 2 !== 0 ? 'lg:mt-20' : ''}`}
+                className={`bg-white/5 backdrop-blur-xl p-10 rounded-[4rem] border border-white/10 shadow-2xl relative ${i % 2 !== 0 ? 'lg:mt-20' : ''}`}
               >
                 <div className={`w-16 h-16 bg-${step.c}-600 text-white rounded-3xl flex items-center justify-center mb-8 shadow-xl`}>
                   {React.cloneElement(step.i, { size: 32 })}
                 </div>
-                <h4 className="font-black text-indigo-600 text-[10px] tracking-widest uppercase mb-2">{step.m}</h4>
-                <h3 className="font-black text-slate-900 text-xl uppercase tracking-tight">{step.t}</h3>
-                <p className="text-slate-500 text-[12px] mt-4 font-bold leading-relaxed">
+                <h4 className="font-black text-cyan-200 text-[11px] tracking-widest uppercase mb-2">{step.m}</h4>
+                <h3 className="font-black text-white text-2xl uppercase tracking-tight">{step.t}</h3>
+                <p className="text-slate-100 text-[13px] mt-4 font-semibold leading-relaxed">
                   {step.d}
                 </p>
-                <div className="absolute -top-8 -right-4 text-9xl font-black text-slate-100/50 -z-10">{step.p}</div>
+                <div className=" text-8xl font-black text-white/10 -z-10">{step.p}</div>
               </motion.div>
             ))}
           </div>
