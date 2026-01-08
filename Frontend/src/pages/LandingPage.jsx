@@ -116,45 +116,45 @@ const IntroScreen = ({ onComplete }) => {
 };
 const FlowingWaveBackground = () => {
   const shouldReduceMotion = useReducedMotion();
-  
+
   return (
     <div className="fixed inset-0 -z-50 overflow-hidden pointer-events-none" style={{ background: '#0a0e1a', willChange: 'transform' }}>
-    
+
       <div className="absolute inset-0">
-      
+
         <motion.div
           className="absolute bottom-[-5%] right-[15%] w-[65%] h-[75%] rounded-full opacity-90 blur-[100px]"
-          style={{ 
+          style={{
             background: "radial-gradient(ellipse at 40% 70%, rgba(236,72,153,0.85) 0%, rgba(219,39,119,0.75) 25%, rgba(168,85,247,0.65) 50%, rgba(147,51,234,0.45) 75%, transparent 100%)",
             willChange: 'transform',
             transform: 'translateZ(0)'
           }}
-          animate={shouldReduceMotion ? {} : { 
+          animate={shouldReduceMotion ? {} : {
             scale: [1, 1.1, 1],
             x: [0, 15, 0],
             y: [0, -20, 0],
           }}
-          transition={{ 
+          transition={{
             duration: 20,
             ease: "easeInOut",
             repeat: Infinity
           }}
         />
 
-      
+
         <motion.div
           className="absolute top-[20%] right-[25%] w-[35%] h-[65%] rounded-full opacity-85 blur-[90px]"
-          style={{ 
+          style={{
             background: "radial-gradient(ellipse at 50% 20%, rgba(59,130,246,0.9) 0%, rgba(37,99,235,0.8) 30%, rgba(29,78,216,0.6) 60%, rgba(30,64,175,0.3) 90%, transparent 100%)",
             willChange: 'transform',
             transform: 'translateZ(0)'
           }}
-          animate={shouldReduceMotion ? {} : { 
+          animate={shouldReduceMotion ? {} : {
             scale: [1, 1.12, 1],
             x: [0, -10, 0],
             y: [0, 15, 0],
           }}
-          transition={{ 
+          transition={{
             duration: 18,
             ease: "easeInOut",
             repeat: Infinity,
@@ -162,20 +162,20 @@ const FlowingWaveBackground = () => {
           }}
         />
 
-    
+
         <motion.div
           className="absolute top-[15%] right-[5%] w-[30%] h-[70%] rounded-full opacity-80 blur-[80px]"
-          style={{ 
+          style={{
             background: "radial-gradient(ellipse at 50% 15%, rgba(20,184,166,0.9) 0%, rgba(13,148,136,0.8) 30%, rgba(15,118,110,0.6) 60%, rgba(17,94,89,0.3) 90%, transparent 100%)",
             willChange: 'transform',
             transform: 'translateZ(0)'
           }}
-          animate={shouldReduceMotion ? {} : { 
+          animate={shouldReduceMotion ? {} : {
             scale: [1, 1.15, 1],
             x: [0, -8, 0],
             y: [0, 20, 0],
           }}
-          transition={{ 
+          transition={{
             duration: 16,
             ease: "easeInOut",
             repeat: Infinity,
@@ -183,16 +183,16 @@ const FlowingWaveBackground = () => {
           }}
         />
 
-      
-        <div 
-          className="absolute inset-0" 
-          style={{ 
+
+        <div
+          className="absolute inset-0"
+          style={{
             background: "linear-gradient(180deg, rgba(10,14,26,0.3) 0%, rgba(10,14,26,0.1) 30%, transparent 60%, rgba(10,14,26,0.2) 100%)"
-          }} 
+          }}
         />
       </div>
 
-      
+
       {!shouldReduceMotion && (
         <div className="absolute inset-0 flex items-center justify-center mix-blend-screen opacity-20" style={{ willChange: 'transform', transform: 'translateZ(0)' }}>
           <svg
@@ -247,6 +247,17 @@ const FlowingWaveBackground = () => {
 
 const LandingPage = () => {
   const [showIntro, setShowIntro] = useState(true);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    mobile: '',
+    course: '',
+    message: ''
+  });
+
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
+
 
   useEffect(() => {
 
@@ -262,6 +273,51 @@ const LandingPage = () => {
     const element = document.getElementById(id);
     if (element) element.scrollIntoView({ behavior: 'smooth' });
   };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleRequestSubmit = (e) => {
+    e.preventDefault();
+
+    const { name, email, mobile, course } = formData;
+
+
+    if (!name || !email || !mobile || !course) {
+      setError('Please fill all required fields.');
+      setSubmitted(false);
+      return;
+    }
+
+    if (mobile.length < 10) {
+      setError('Please enter a valid mobile number.');
+      setSubmitted(false);
+      return;
+    }
+    setError('');
+    setSubmitted(true);
+
+    setFormData({
+      name: '',
+      email: '',
+      mobile: '',
+      course: '',
+      message: ''
+    });
+
+
+    setTimeout(() => {
+      setSubmitted(false);
+    }, 3000);
+  };
+
+
+
 
 
   const fadeInUp = {
@@ -283,9 +339,9 @@ const LandingPage = () => {
       <FlowingWaveBackground />
 
 
-      <motion.div 
-        className="fixed top-0 left-0 right-0 h-1.5 bg-indigo-800 z-110 origin-left" 
-        style={{ scaleX, willChange: 'transform', transform: 'translateZ(0)' }} 
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-1.5 bg-indigo-800 z-110 origin-left"
+        style={{ scaleX, willChange: 'transform', transform: 'translateZ(0)' }}
       />
 
 
@@ -306,9 +362,24 @@ const LandingPage = () => {
             <span className="text-white font-black tracking-wide text-lg uppercase">
               Skill Development
             </span>
-            <span className="text-white font-bold text-[12px] tracking-[0.3em] uppercase mt-1">
+            <span className="text-white font-bold text-[12px] tracking-[0.3em] uppercase mb-2">
               Training Centre
             </span>
+            {/* CALL & OPEN INFO */}
+            <div className=" hidden lg:flex items-center gap-8 
+     text-[11px] font-black uppercase tracking-widest 
+     text-white/80 leading-none h-full">
+
+              <div className="flex items-center gap-2">
+                <span className="text-teal-400">Call us today:</span>
+                <a href="tel:9933562222" className="hover:text-white transition">
+                  9933562222
+                </a>
+              </div>
+
+
+            </div>
+
           </div>
         </div>
 
@@ -489,9 +560,9 @@ const LandingPage = () => {
       {/*  STRUCTURE & DELIVERY */}
       <section id="structure" className="py-32 px-8 md:px-20 overflow-hidden">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-24 items-center">
-          <motion.div 
-            initial={{ opacity: 0, x: -50 }} 
-            whileInView={{ opacity: 1, x: 0 }} 
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             style={{ willChange: 'transform, opacity' }}
@@ -517,9 +588,9 @@ const LandingPage = () => {
             </div>
           </motion.div>
 
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }} 
-            whileInView={{ opacity: 1, scale: 1 }} 
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             style={{ willChange: 'transform, opacity' }}
@@ -550,7 +621,7 @@ const LandingPage = () => {
               { id: '04', title: 'Joint Certification', icon: <FileBadge />, color: 'purple', desc: 'Recognised industry certificates.' }
             ].map((step, i) => (
               <motion.div
-                key={i} 
+                key={i}
                 whileHover={{ y: -12 }}
                 style={{ willChange: 'transform' }}
                 className={`group bg-white p-10 rounded-[4rem] border border-slate-100 hover:bg-${step.color}-600 transition-all duration-500 shadow-sm hover:shadow-2xl cursor-pointer`}
@@ -574,8 +645,8 @@ const LandingPage = () => {
             <h2 className="text-5xl font-black uppercase tracking-tighter text-white">Placement Pathway</h2>
           </div>
           <div className="grid lg:grid-cols-2 gap-16 mb-20">
-            <motion.div 
-              whileHover={{ scale: 1.02 }} 
+            <motion.div
+              whileHover={{ scale: 1.02 }}
               style={{ willChange: 'transform' }}
               className="p-16 bg-slate-900 rounded-[5rem] text-white shadow-2xl group relative overflow-hidden"
             >
@@ -584,8 +655,8 @@ const LandingPage = () => {
               <p className="text-slate-400 text-lg leading-relaxed mb-10 normal-case font-bold">Active partnerships with leading retail chains and BPOs across India.</p>
               <div className="flex items-center gap-4 text-xs font-black uppercase tracking-widest"><CheckCircle className="text-green-400" /> Leading Retail Chains</div>
             </motion.div>
-            <motion.div 
-              whileHover={{ scale: 1.02 }} 
+            <motion.div
+              whileHover={{ scale: 1.02 }}
               style={{ willChange: 'transform' }}
               className="p-16 bg-indigo-600 rounded-[5rem] text-white shadow-2xl group relative overflow-hidden"
             >
@@ -600,7 +671,7 @@ const LandingPage = () => {
 
       {/* YEKKIN SCHEME */}
       <motion.section
-        initial={{ opacity: 0 }} 
+        initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.6, ease: "easeOut" }}
@@ -609,8 +680,8 @@ const LandingPage = () => {
       >
         <div className="absolute inset-0 bg-indigo-600/10 group-hover:bg-indigo-600/20 transition-colors"></div>
         <div className="max-w-5xl mx-auto text-center relative z-10">
-          <motion.div 
-            animate={{ rotate: 360 }} 
+          <motion.div
+            animate={{ rotate: 360 }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
             style={{ willChange: 'transform', transform: 'translateZ(0)' }}
           >
@@ -639,8 +710,8 @@ const LandingPage = () => {
               { m: 'Ongoing', t: 'Scale-Up', p: '4', i: <TrendingUp />, c: 'emerald', d: 'Continuous batch operations with enhanced international placement linkages and programme expansion' }
             ].map((step, i) => (
               <motion.div
-                key={i} 
-                whileInView={{ opacity: 1, y: 0 }} 
+                key={i}
+                whileInView={{ opacity: 1, y: 0 }}
                 initial={{ opacity: 0, y: 50 }}
                 viewport={{ once: true, margin: "-50px" }}
                 whileHover={{
@@ -666,8 +737,104 @@ const LandingPage = () => {
         </div>
       </section>
       <MissionSection />
+      {/* REQUEST INFORMATION */}
+      <div className="mb-20 max-w-3xl mx-auto bg-white/5 border border-white/10 
+                rounded-[4rem] p-12 backdrop-blur-xl">
+
+        <h3 className="text-3xl font-black uppercase tracking-tight text-white mb-10 text-center">
+          Request Information
+        </h3>
+
+        <form
+          onSubmit={handleRequestSubmit}
+          className="grid md:grid-cols-2 gap-6">
+
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Full Name"
+            className="footer-input"
+          />
+
+
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Email Address"
+            className="footer-input"
+          />
+
+          <input
+            type="number"
+            name="mobile"
+            value={formData.mobile}
+            onChange={handleChange}
+            placeholder="Mobile Number"
+            className="footer-input"
+          />
+          <select
+            name="course"
+            value={formData.course}
+            onChange={handleChange}
+            className="footer-input text-black"
+          >
+            <option value="">Select Course</option>
+            <option value="Tally Accounting">Tally Accounting</option>
+            <option value="CSR">Customer Sales Representative</option>
+            <option value="Retail">Retail Management</option>
+          </select>
+
+
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            rows="4"
+            placeholder="Your Message"
+            className="footer-input resize-none"
+          />
+
+
+          <div className="md:col-span-2 text-center">
+            <button
+              type="submit"
+              className="px-12 py-4 
+                   rounded-full text-xs font-black uppercase tracking-widest
+                   transition-transform hover:scale-105 active:scale-100"
+            >
+              Submit Request
+            </button>
+            {error && (
+              <p className="md:col-span-2 text-black text-center mt-4 
+                font-bold text-xs uppercase tracking-widest">
+                {error}
+              </p>
+            )}
+
+
+            <div className=" allign items-center gap-2 mt-4 leading-none">
+              <span className="text-teal-400">We are open : </span>
+              <span className="text-slate-300">Mon–Fri | 10:00 AM – 5:00 PM</span>
+            </div>
+            {submitted && (
+              <p className="text-green-200 text-center mt-6 font-black tracking-widest uppercase text-xs">
+                Request submitted successfully!
+              </p>
+            )}
+
+          </div>
+
+        </form>
+      </div>
+
+
       {/*  FOOTER */}
       <footer className="py-32 px-8 md:px-20 bg-slate-900 rounded-t-[6rem] overflow-hidden relative">
+
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-3 gap-24 items-start mb-24">
             <div className="flex flex-col items-start">
@@ -699,6 +866,7 @@ const LandingPage = () => {
             <p className="text-slate-600 text-[10px] font-black tracking-[0.2em] uppercase">© 2026 All Rights Reserved.</p>
           </div>
         </div>
+
       </footer>
 
     </div>
