@@ -370,9 +370,9 @@ const LandingPage = () => {
      text-[11px] font-black uppercase tracking-widest 
      text-white/80 leading-none h-full">
 
-              <div className="flex items-center gap-2">
-                <span className="text-teal-400">Call us today:</span>
-                <a href="tel:9933562222" className="hover:text-white transition">
+              <div className="flex items-center gap-2 tracking-normal">
+                <span className="text-teal-200">Call us today:</span>
+                <a href="tel:9933562222" className="hover:text-white transition tracking-normal font-light text-[12px]">
                   9933562222
                 </a>
               </div>
